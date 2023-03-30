@@ -48,7 +48,7 @@ package leetcode.editor.cn;
 
 
 /**
- * 1111www
+ * 1111wwwa
  * 两数之和
  * @author WZP
  * @date 2022-11-07 19:35:08
