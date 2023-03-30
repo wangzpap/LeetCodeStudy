@@ -55,8 +55,11 @@ package leetcode.editor.cn;
  */
 public class P1_TwoSum{
 	 public static void main(String[] args) {
-	 	 //测试xxx9229222
+
+	 	 //测试922
 	 	 Solution s = new P1_TwoSum().new Solution();
+
+
 	 }
 	 
 //力扣代码
