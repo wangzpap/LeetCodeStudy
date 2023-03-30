@@ -58,6 +58,7 @@ public class P1_TwoSum{
 
 	 	 //测试922
 	 	 Solution s = new P1_TwoSum().new Solution();
+	 	 Solution s22 = new P1_TwoSum().new Solution();
 
 
 	 }
