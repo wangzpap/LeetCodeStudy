@@ -63,18 +63,27 @@ public class P21_MergeTwoSortedLists{
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-		ListNode listNode = new ListNode(0);
-		ListNode preNode = listNode;
-		while(list1!= null && list2!= null){
-			if(list1.val < list2.val){
-				preNode.next = list1;
-				list1 = list1.next;
-			}else
-			preNode = preNode.next;
+		ListNode newNode = new ListNode(-1);ListNode re = newNode;
+		ListNode l1,l2;
+		l1 = list1; l2 = list2;
+		while (l1!= null && l2!= null) {
+			if(l1.val<=l2.val){
+			   newNode.next = l1;
+			   l1 = l1.next;
+			}else{
+				newNode.next = l2;
+				l2 = l2.next;
+		    }
+			newNode = newNode.next;
+    	}
+		if(l1!=null) {
+			newNode.next = l1;
 		}
-		preNode.next = list1 == null? list2 : list1;
-		return listNode.next;
-    }
+		if(l2!=null) {
+			newNode.next = l2;
+		}
+		return re.next;
+	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

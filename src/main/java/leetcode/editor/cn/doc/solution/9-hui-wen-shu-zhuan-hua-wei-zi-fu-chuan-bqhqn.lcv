@@ -1,0 +1,16 @@
+# **- 思路**
+
+**转化为字符串比较左右两半部分就可以了。python代码简洁二行。**
+
+时间48 ms击败97.80%；内存14.8 MB击败92.24%
+
+* []
+
+```python
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        s = str(x)
+        return s[:len(s) >> 1] ==  s[ : - (len(s) >> 1) - 1: -1]
+```
+
+**↓ 觉得不错的话，欢迎点赞、评论、收藏！ ^_^**
