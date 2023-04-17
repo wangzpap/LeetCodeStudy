@@ -66,46 +66,46 @@ class Solution {
 	 * 方式二
 	 */
 
-	int max_depth = 0;
-
-    public int maxDepth(TreeNode root) {
-		traverse(root,0);
-		return max_depth;
-    }
-
-	void traverse(TreeNode root,int deepth){
-		if(root == null){
-			return;
-		}
-		deepth++;
-		max_depth = Math.max(max_depth, deepth);
-		traverse(root.left,deepth);
-		traverse(root.right,deepth);
-		deepth--;
-	}
+//	int max_depth = 0;
+//
+//    public int maxDepth(TreeNode root) {
+//		traverse(root,0);
+//		return max_depth;
+//    }
+//
+//	void traverse(TreeNode root,int deepth){
+//		if(root == null){
+//			return;
+//		}
+//		deepth++;
+//		max_depth = Math.max(max_depth, deepth);
+//		traverse(root.left,deepth);
+//		traverse(root.right,deepth);
+//		deepth--;
+//	}
 
 	/**
 	 * 方式三
 	 */
 
-//	int max_depth = 0;
-//	int depth = 0;
-//
-//	public int maxDepth(TreeNode root) {
-//		traverse(root);
-//		return max_depth;
-//	}
-//
-//	void traverse(TreeNode root){
-//		if(root == null){
-//			return;
-//		}
-//		depth++;
-//		max_depth = Math.max(max_depth, depth);
-//		traverse(root.left);
-//		traverse(root.right);
-//		depth--;
-//	}
+	int max_depth = 0;
+	int depth = 0;
+
+	public int maxDepth(TreeNode root) {
+		traverse(root);
+		return max_depth;
+	}
+
+	void traverse(TreeNode root){
+		if(root == null){
+			return;
+		}
+		depth++;
+		max_depth = Math.max(max_depth, depth);
+		traverse(root.left);
+		traverse(root.right);
+		depth--;
+	}
 
 
 

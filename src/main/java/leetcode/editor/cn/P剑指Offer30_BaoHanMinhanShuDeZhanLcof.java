@@ -39,7 +39,7 @@ import java.util.List;
  * @author WZP
  * @date 2023-03-29 15:27:48
  */
-public class Offer30_BaoHanMinhanShuDeZhanLcof{
+class Offer30_BaoHanMinhanShuDeZhanLcof{
 	 public static void main(String[] args) {
 	 	 //测试代码
          MinStack solution = new Offer30_BaoHanMinhanShuDeZhanLcof().new MinStack();
