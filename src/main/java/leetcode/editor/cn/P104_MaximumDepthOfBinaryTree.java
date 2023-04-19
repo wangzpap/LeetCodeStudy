@@ -55,19 +55,21 @@ class Solution {
 //    }
 
 	int maxDepth = 0;
-	int depth = 0;
+	int depth = 1;
 	public int maxDepth(TreeNode root) {
 		traverse(root);
+		System.out.println(depth);
 		return maxDepth;
 	}
 
 	public void traverse(TreeNode root){
+		depth++;
 		if(root == null) {
 			maxDepth = Math.max(maxDepth,depth);
+			System.out.println(depth);
 			return;
 		}
 
-		depth++;
 		traverse(root.left);
 		traverse(root.right);
 		depth--;

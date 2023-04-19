@@ -78,44 +78,7 @@ public class P1024_VideoStitching{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int videoStitching(int[][] clips, int time) {
-		Arrays.sort(clips, (a,b)->{
-			if(a[0]==b[0]){
-				return b[1] - a[1];
-			}
-			return a[0] - b[0];
-		});
-
-		if(clips[0][0]!=0)return -1;
-
-
-		int curend = clips[0][1];
-		int x = 1;
-		int newx = 0;
-		int result = 0;
-
-		for(int i=0;i < clips.length && clips[i][0] <= curEnd; i++){
-			int newend = 0;
-			x = newx;
-			while (x<clips.length) {
-				if(curend<=clips[x][1]&&curend>=clips[x][0]){
-					int yyy = newend;
-					newend = Math.max(newend,clips[x][1]);
-					if(yyy!=newend){
-						newx = x;
-					}
-				}
-			}
-			result++;
-			curend = newend;
-			if (curend >= time) {
-				// 已经可以拼出区间 [0, T]
-				return result;
-			}
-		}
-		return -1;
-
-
-		return result;
+		return 1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

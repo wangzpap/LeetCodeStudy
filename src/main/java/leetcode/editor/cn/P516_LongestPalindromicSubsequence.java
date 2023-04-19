@@ -40,6 +40,7 @@ import java.util.Arrays;
  * 最长回文子序列
  * @author WZP
  * @date 2023-04-17 11:13:13
+ * 见算法小抄book137页
  */
 public class P516_LongestPalindromicSubsequence{
 	 public static void main(String[] args) {

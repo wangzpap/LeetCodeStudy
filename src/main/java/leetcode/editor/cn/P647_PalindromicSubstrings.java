@@ -40,9 +40,10 @@ package leetcode.editor.cn;
 import java.util.Arrays;
 
 /**
- * 回文子串
+ * 回文子串（的数目）
  * @author WZP
  * @date 2023-04-17 15:09:51
+ * 自底向上的动态规划
  * https://www.programmercarl.com/0647.%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2.html#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92
  */
 public class P647_PalindromicSubstrings{
