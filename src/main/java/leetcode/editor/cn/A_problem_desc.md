@@ -7,7 +7,7 @@
 - 中等 47 全排列-返回所有可能的(包含重复数字)
 - 中等 698. 划分为k个相等的子集
 - 中等 131 分割回文串
-
+- 困难 51、52 N皇后
 
 ## 二叉树
 https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/dong-ge-da-334dd/
@@ -27,11 +27,10 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
 - 简单 111. 二叉树的最小深度
 - 中等 752. [打开转盘锁](https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/#三解开密码锁的最少次数) 
 
-
-
 ## 动态规划DP
 
 - 简单 509. 斐波那契数列（递归+备忘录)
+- 中等 1143. 最长巩固子序列(二维,自底向上)
 - 简单 70. 爬楼梯
 - 中等 300. 最长递增子序列(一维,自底向上)
 - 中等 64. 最小路径和(二维,自顶向下)
@@ -40,7 +39,6 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
 - 中等 53.最大子数组(一维，自顶向下)
 - 中等 516.最长回文子序列(子序列不连续)(二维，自顶向下)
 - 中等 647.回文字串(寻找回文字串数量，字串连续)(二维，自底向上)
-
 
 ## 贪心算法
 
@@ -67,3 +65,12 @@ https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa
 - 简单 58. 最后一个单词的长度
 - 简单 67. 二进制求和
 - 简单 171. Excel 表列序号(26进制转10进制)
+- 简单 495. 判断重复的子字符串()
+- 简单 242. 有效的字母异位词
+- 简单 383. 赎金信
+
+## 位运算
+
+- 简单 136. 只出现一次的数字（异或运算）
+- 简单 191. [位 1 的个数](https://labuladong.github.io/algo/di-san-zha-24031/shu-xue-yu-659f1/chang-yong-13a76/#二n--n-1-的运用)
+- 简单 231. 2 的幂(n & (n-1)的应用)

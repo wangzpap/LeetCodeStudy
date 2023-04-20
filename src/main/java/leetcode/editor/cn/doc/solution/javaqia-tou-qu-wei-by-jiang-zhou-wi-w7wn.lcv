@@ -1,0 +1,22 @@
+### 解题思路
+
+比如如果S中有重复子串S1：S = S1 + S1，则S + S = S1 + S1 + S1 + S1
+![image.png](https://pic.leetcode.cn/1681735049-gXIOSx-image.png)
+
+，中间那两个S1合起来恰好可形成一个S
+但是为了不取到两边的S1，它又不知道S1具体是什么，S1最短为一个字符，所以掐头去尾
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public boolean repeatedSubstringPattern(String s) {
+        String t = s + s;
+        t = t.substring(1, t.length() - 1);
+        return t.contains(s);
+    }
+}
+```
+
