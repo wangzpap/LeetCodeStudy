@@ -68,17 +68,12 @@ class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
 		List<Integer>[] graph = buildGraph(numCourses,prerequisites);
 
-
 		onePath = new boolean[numCourses];
 		tryPoints = new boolean[numCourses];
-
 		existCycle = false;
-
-
 		for(int i = 0;i< numCourses;i++){
 			dfs(graph,i);
 		}
-
 		return !existCycle;
 
 
@@ -100,7 +95,6 @@ class Solution {
 		  }
 		  // 优化代码end
 
-		  //
 		  onePath[num] = true;
 		  for(int i=0;i< graph[num].size();i++){
 

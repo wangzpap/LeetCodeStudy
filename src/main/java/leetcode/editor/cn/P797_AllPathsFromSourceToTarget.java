@@ -45,6 +45,7 @@
 package leetcode.editor.cn;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -64,24 +65,24 @@ public class P797_AllPathsFromSourceToTarget{
 class Solution {
 
 	int n;
-	List<List<Integer>> result = new ArrayList<List<Integer>>();
+	List<List<Integer>> result = new ArrayList<>();
 
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
 		n = graph.length;
-		List<Integer> path = new ArrayList<Integer>();
+		LinkedList<Integer> path = new LinkedList<Integer>();
 		DFS(0,path,graph);
 		return result;
     }
 
-	public void DFS(int i,List<Integer> path,int[][] graph){
+	public void DFS(int i,LinkedList<Integer> path,int[][] graph){
 		path.add(i);
-		if(i == n-1){
+		if(i == n-1){ // 判断是否到目标节点
 			result.add(new ArrayList<Integer>(path));
 		}
 		for(int j = 0;j < graph[i].length;j++){
 			DFS(graph[i][j],path,graph);
 		}
-		path.remove(path.size()-1);
+		path.removeLast();
 	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
