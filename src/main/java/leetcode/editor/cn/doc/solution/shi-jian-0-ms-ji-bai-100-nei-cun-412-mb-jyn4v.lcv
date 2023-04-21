@@ -1,0 +1,44 @@
+解题思路
+1. 1->2->3  =>  1->1'->2->2'-3->3'
+2. 将 1，2，3的random 的给 1',2'.3' 例如：1 random 3 则 1' random 3'
+3. 将 2）得到的链表拆分成两个，一个是 1，2，3 另一个是 1',2',3'，要保证1，2，3与原来的相同（因为不允许改变原来的链表）
+4. 输出 1',2',3'
+
+* 
+
+```
+class Solution {
+    public Node copyRandomList(Node head) {
+// 1) 将1->2->3  ==>  1->1'->2->2'-3->3'
+        if(head == null) return head;
+        Node cur = head;
+        while(cur != null){
+            Node newNode = new Node(cur.val);
+            newNode.next = cur.next;
+            cur.next = newNode;
+            cur = newNode.next;
+        }
+// 2）将 1，2，3的random 的给 1',2'.3' 例如：1 random 3 则 1' random 3'
+        cur = head;
+        while(cur!=null){
+            if(cur.random == null){
+                cur.next.random = null;
+            }else{
+                cur.next.random = cur.random.next;
+            }
+            cur = cur.next.next;
+        }
+// 3） 将2）得到的链表拆分成两个，一个是 1，2，3 另一个是 1',2',3'
+        Node head2 = head.next;
+        cur = head;
+        while(cur.next!=null){
+            Node temp = cur.next;
+            cur.next = cur.next.next;
+            cur = temp;
+        }
+// 4）输出 1',2',3'
+        return head2;
+    }
+}
+```
+

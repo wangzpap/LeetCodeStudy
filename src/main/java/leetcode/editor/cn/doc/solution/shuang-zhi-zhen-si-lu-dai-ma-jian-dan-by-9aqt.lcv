@@ -1,0 +1,60 @@
+> Problem: [27. 移除元素](https://leetcode.cn/problems/remove-element/description/)
+
+[TOC]
+
+# 思路
+
+> 根据题目的描述可以把nums中等于val的元素放在最后面，其他元素放在前面，从而得到解
+
+# 解题方法
+
+> 运用双指针的方法，从前往后把等于val的元素被赋值为从后面往前不等于val的元素，直到数组全部遍历完。
+> 例如：nums = [0,1,2,2,3,0,4,2], val = 2
+> 第一次赋值就变成 nums = [0,1,4,2,3,0,4,2] 此时l = 2, r = 6
+> 第一次赋值就变成 nums = [0,1,4,0,3,0,4,2] 此时l = 3, r = 5
+> 然后 l=r=4，遍历结束，跳出循环。
+> 此时得到最终结果
+> nums = [0,1,4,0,3,0,4,2]  res = 5
+
+# 复杂度
+
+- 时间复杂度:  $O(n)$
+- 空间复杂度:  $O(1)$
+
+# Code
+
+* []
+
+```Java
+
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        //数组长度
+        int n = nums.length;
+        if(n == 0)  return 0;
+        //左指针
+        int l = 0;
+        //右指针
+        int r = n;
+        //遍历结束跳槽循环
+        while(l<r ) {
+
+        //    int tem;
+            //如果从左边遍历找到等于val的元素被赋值为从右边遍历不等于val的元素，移动指针
+            if(nums[l] == val) {
+                if(nums[r-1] != val) {
+                    nums[l] = nums[r-1];
+                    l++;
+                    r--;
+                } else   
+                    r--;
+            } else
+                l++;
+        }
+        
+        return r ;
+
+    }
+}
+```
+

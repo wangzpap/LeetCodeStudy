@@ -57,34 +57,34 @@ public class P46_Permutations{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
 
-	List<List<Integer>> finalresult = new ArrayList<List<Integer>>();
-	int N;
-	boolean[] booleans;
+	List<List<Integer>> finalresult = new ArrayList<>(); // 最终结果列表
+	int N;                                               // 给定数组的长度
+	boolean[] booleans;                                  // 每个数字是否使用
 	int[] nums;
 
     public List<List<Integer>> permute(int[] nums) {
 
 		this.nums  = nums;
-		List<Integer> result = new LinkedList<>();
+		LinkedList<Integer> result = new LinkedList<>();
 		booleans = new boolean[nums.length];
 		N = nums.length;
 		backtrack(result,0);
 		return finalresult;
 	}
 
-	public void backtrack(List<Integer> result,int n){
+	public void backtrack(LinkedList<Integer> result,int n){
 		if(n == N){
 			finalresult.add(new LinkedList<>(result)); // 必须新new一个添加到finalresult中，否则只是添加了引用的地址
 			return;
 		}
-		for (int i = 0; i < nums.length;i++){
+		for (int i = 0; i < nums.length;i++){     // 遍历当前节点的每一个树枝即每种可能
 			if(booleans[i]){
 				continue;
 			}
 			result.add(nums[i]);
 			booleans[i] = true;
 			backtrack(result,n+1);
-			result.remove(result.size()-1);
+			result.removeLast();
 			booleans[i] = false;
 		}
 	}

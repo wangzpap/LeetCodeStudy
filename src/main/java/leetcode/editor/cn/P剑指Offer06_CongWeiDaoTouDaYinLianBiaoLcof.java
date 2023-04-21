@@ -25,10 +25,10 @@ import java.util.ArrayList;
  * @author WZP
  * @date 2023-03-29 15:55:36
  */
-public class Offer06_CongWeiDaoTouDaYinLianBiaoLcof{
+class POffer06_CongWeiDaoTouDaYinLianBiaoLcof {
 	 public static void main(String[] args) {
 	 	 //测试代码
-	 	 Solution solution = new Offer06_CongWeiDaoTouDaYinLianBiaoLcof().new Solution();
+	 	 Solution solution = new POffer06_CongWeiDaoTouDaYinLianBiaoLcof().new Solution();
 	 }
 	 
 //力扣代码
@@ -40,6 +40,8 @@ public class Offer06_CongWeiDaoTouDaYinLianBiaoLcof{
  *     ListNode next;
  *     ListNode(int x) { val = x; }
  * }
+ * 
+ *
  */
 class Solution {
     public int[] reversePrint(ListNode head) {

@@ -51,7 +51,7 @@ public class P47_PermutationsIi{
 class Solution {
 
 	List<List<Integer>> finalresult = new ArrayList<List<Integer>>();
-	Set<List<Integer>> s = new HashSet<List<Integer>>();
+	Set<List<Integer>> s = new HashSet<List<Integer>>(); // 返回所有不重复的全排列 的关键
 	int N;
 	boolean[] booleans;
 	int[] nums;

@@ -1,0 +1,51 @@
+> Problem: [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/description/)
+
+[TOC]
+
+# 思路
+
+W
+dp[i]表示包括在num[i]之前的最长递增子序列长度
+
+    dp[i]=max(dp[i],dp[j]+1)
+         dp数组元素初始值为1
+
+N
+if (dp[i] > result) result = dp[i]; // 取长的子序列
+长度为0的情况,返回0
+
+# 复杂度
+
+- 时间复杂度:
+
+> 添加时间复杂度, 示例： $O(n^2)$
+
+- 空间复杂度:
+
+> 添加空间复杂度, 示例： $O(n)$
+
+# Code
+
+* []
+
+```C++
+
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        const int len= nums.size();
+        vector<int> dp(len,1);
+        int res=1;
+        for(int i=0;i<len;i++){
+            for(int j=0;j<i;j++){
+                if(nums[i]>nums[j]){
+                    dp[i]=max(dp[i],dp[j]+1);
+                    res=max(dp[i],res);
+                }
+            }
+        }
+        return res;
+    }
+};
+```
+
