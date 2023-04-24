@@ -55,6 +55,7 @@ package leetcode.editor.cn;
  * @author WZP
  * @date 2023-04-02 21:49:47
  * 解题方法：弗洛伊德算法for-for-for算法（多源最短路径）
+ * 可以处理负权，不能处理负环
  */
 public class P743_NetworkDelayTime{
 	 public static void main(String[] args) {
@@ -69,7 +70,7 @@ class Solution {
     int[][] s;
     public int networkDelayTime(int[][] times, int n, int k) {
 		s = new int[n+1][n+1]; // s[i][j]表示i到j的（最小）距离
-		// 数据初始化
+		// 数据初始化（到自己是0）
 		for(int i = 1; i <= n; i++)
 			for(int j = 1; j <= n; j++){
 				if(i==j)
@@ -80,7 +81,7 @@ class Solution {
 			s[times[i][0]][times[i][1]] = times[i][2];
 		}
 		// 弗洛伊德算法
-		for(int m = 1;m <= n;m++){
+		for(int m = 1;m<= n;m++){
 			for(int i = 1;i <= n;i++){
 				for(int j = 1; j<= n;j++){
 					s[i][j] = Math.min(s[i][j],s[i][m]+s[m][j]);

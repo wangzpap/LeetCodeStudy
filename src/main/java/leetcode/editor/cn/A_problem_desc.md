@@ -74,3 +74,8 @@ https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa
 - 简单 136. 只出现一次的数字（异或运算）
 - 简单 191. [位 1 的个数](https://labuladong.github.io/algo/di-san-zha-24031/shu-xue-yu-659f1/chang-yong-13a76/#二n--n-1-的运用)
 - 简单 231. 2 的幂(n & (n-1)的应用)
+
+## 图论（最短路径）
+
+- 中等 743. 网络延迟时间(弗洛伊德算法FFF算法，多源最短路径)
+- 中等 787. K 站中转内最便宜的航班(贝尔曼福特算法，单源最短路径)
