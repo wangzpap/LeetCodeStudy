@@ -1,0 +1,46 @@
+### 解题思路
+
+Bellman-Ford 模板题
+Bellman-Ford 算法中，每一次迭代所有的边，则第i次迭代得到的是最多走 i 步时，从 src 到各个节点的最短路径。
+迭代次数恰好为 k+1 ，即可得最多走 k+1 步时，从 src 到所有节点的最短路径。
+*自己想不出来，看到评论区，回去翻《算法导论》，才理解到 Bellman-Ford
+
+坑1: 松弛所有边时，时基于上一次迭代结果进行松弛，当前迭代中的不能相互影响。所以，使用两个辅助数组，来轮流存储上一次迭代的全部结果，和这一次迭代的全部结果。
+
+图 G(V, E)
+时间复杂度：O(kE)
+空间复杂度：O(n)
+
+### 代码
+
+* cpp
+
+```cpp
+class Solution {
+public:
+    int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int K) {
+        vector<vector<int>> d(2, vector<int>(n, INT_MAX));
+        vector<int> pre(n, -1);
+        
+        bool turn = 0;
+        d[turn][src] = 0;
+        d[!turn][src] = 0;
+        pre[src] = src;
+        int num = K + 1;
+        for (int i = 0; i < num; i++){
+            for (auto& fli : flights){
+                int i = fli[0];
+                int j = fli[1];
+                int price = fli[2];
+                if (d[turn][i] != INT_MAX && d[turn][i] + price < d[!turn][j]){
+                    d[!turn][j] = d[turn][i] + price;
+                    pre[j] = i;
+                }
+            }
+            turn = !turn;
+        }
+        return (d[turn][dst]==INT_MAX) ? -1 : d[turn][dst];
+    }
+};
+```
+
