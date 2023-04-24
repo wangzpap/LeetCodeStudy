@@ -84,7 +84,6 @@ class Solution {
 		}
 		return result;
     }
-
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
