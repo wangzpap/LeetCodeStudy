@@ -58,8 +58,12 @@ class Solution {
 		return finalresult;
 	}
 
+	/**
+	 *
+	 * @param s 题目中给出的字符串，该项不会变化
+	 * @param start 处理下标start到最后这部分字符串
+	 */
 	void traverse(String s,int start){
-
 		if(start==s.length()){
 			finalresult.add(new LinkedList<>(result));
 		}
@@ -73,10 +77,7 @@ class Solution {
 			traverse(s,i+1);
 			// 撤销选择
 			result.removeLast();
-
 		}
-
-
 	}
 
 

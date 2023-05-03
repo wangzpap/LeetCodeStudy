@@ -67,7 +67,7 @@ class Solution {
     }
 
 	/**
-	 * 返回从i到j的字串的最长回文字串长度
+	 * 返回从i到j的字串的最长回文子串长度
 	 * @param s
 	 * @param i
 	 * @param j

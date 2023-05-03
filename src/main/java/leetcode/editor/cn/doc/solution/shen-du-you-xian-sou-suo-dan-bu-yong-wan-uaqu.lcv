@@ -1,0 +1,32 @@
+![捕获.PNG](https://pic.leetcode-cn.com/1627316121-YgfsIm-%E6%8D%95%E8%8E%B7.PNG)
+
+### 解题思路
+
+深度优先，遇到值不等于root.val的节点就可以返回了！
+
+### 代码
+
+* python3
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def findSecondMinimumValue(self, root: TreeNode) -> int:
+        def find_sec(node):
+            if not node:
+                return float('inf')
+            if node.val!=root.val:
+                return node.val
+            else:
+                return min(find_sec(node.left), find_sec(node.right))
+        x=find_sec(root)
+        if x==float('inf'):
+            return -1
+        return x
+```
+

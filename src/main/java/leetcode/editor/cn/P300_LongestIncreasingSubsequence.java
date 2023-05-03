@@ -70,8 +70,8 @@ class Solution {
 		Arrays.fill(dp,1);
 
 
-		for(int i  = 1; i < nums.length; i++){
-			for(int j = 0;j < i;j++){
+		for(int i  = 1; i < nums.length; i++){ // i 在前
+			for(int j = 0;j < i;j++){ // j 在后
 				if(nums[j]<nums[i]){
 					dp[i] = Math.max(dp[i],dp[j]+1);
 				}

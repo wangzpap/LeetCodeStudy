@@ -1,0 +1,40 @@
+### 解题思路
+
+此处撰写解题思路
+
+### 代码
+
+* java
+
+```java
+
+class Solution {
+    public int ans;
+    public int rootvalue;
+    public int findSecondMinimumValue(TreeNode root) {
+        this.ans=-1;
+        this.rootvalue=root.val;
+
+        DFS(root);//深度遍历
+        return ans;
+
+    }
+    public void DFS(TreeNode root){
+        if(root==null){
+            return;//直接返回
+        }
+        if(ans!=-1  && root.val>=ans){
+            return ;
+        }
+        if(root.val>rootvalue){
+            ans=root.val;//第二小
+        }
+
+
+        DFS(root.left);
+        DFS(root.right);//递归
+
+    }
+}
+```
+

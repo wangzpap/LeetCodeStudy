@@ -1,0 +1,65 @@
+通常思路的背包想法：
+
+* 
+
+```
+class Solution {
+    public int integerBreak(int n) {
+        if(n ==2) return 1;
+        if(n == 3) return 2;
+
+        int[][] dp = new int[n+1][n+1];
+        
+        for(int i = 0; i < n+1; i ++){
+            Arrays.fill(dp[i],1);  
+        }
+
+        
+       
+
+        for(int i = 2; i <=n; i ++){
+            for(int j = 2; j < n+1; j ++){
+                if(j-i >= 0){
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-i]*i);
+                }else{
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+        return dp[n][n];
+    }
+}
+```
+
+dp的含义表示：从前i个数中挑选，满足和为j的最大乘积为多少。由于是乘积所以dp初始均为1。i为2开始是因为从1开始挑选，j为2开始应为有效数字是从2开始。
+进一步空间优化，应为dp[i][j]只与其相邻的状态有关。
+
+* 
+
+```
+class Solution {
+    public int integerBreak(int n) {
+        if(n ==2) return 1;
+        if(n == 3) return 2;
+
+        int[] dp = new int[n+1];
+        Arrays.fill(dp,1);
+        // for(int i = 0; i < n+1; i ++){
+        //     Arrays.fill(dp[i],1);  
+        // }
+
+        
+       
+
+        for(int i = 2; i <=n; i ++){
+            for(int j = 2; j < n+1; j ++){
+                if(j-i >= 0)
+                    dp[j] = Math.max(dp[j], dp[j-i]*i);
+               
+            }
+        }
+        return dp[n];
+    }
+}
+```
+

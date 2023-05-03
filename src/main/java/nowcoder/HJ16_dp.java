@@ -1,4 +1,4 @@
-package othercode.nowcoder;
+package nowcoder;
 
 import java.util.*;
 public class HJ16_dp {

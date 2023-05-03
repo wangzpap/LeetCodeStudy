@@ -1,0 +1,30 @@
+### 方法一：动态规划
+
+看到大家定义的 $dp[i]$ 都是表示至少拆分一次的最大乘积，我的第一想法是将 $dp[i]$ 定义为拆或者不拆的最大值。
+
+$dp[i] = \max(dp[i],\max_{1\leq j\leq i/2}(dp[j] * dp[i - j]))$
+
+$dp[i]$ 初始化为 $i$，表示不拆。但是由于 $n$ 必拆一次，所以 $dp[n]$ 不用初始化。
+
+* []
+
+```java
+class Solution {
+    public int integerBreak(int n) {
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            if (i != n) dp[i] = i;
+            for (int j = 1; j <= i / 2; j++) {
+                dp[i] = Math.max(dp[i], dp[j] * dp[i - j]);
+            }
+        }
+        return dp[n];
+    }
+}
+```
+
+**复杂度分析**
+
+- 时间复杂度：$O(n^{2})$。
+- 空间复杂度：$O(n)$。
+

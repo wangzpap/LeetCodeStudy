@@ -47,13 +47,10 @@ public class P698_PartitionToKEqualSumSubsets{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean canPartitionKSubsets(int[] nums, int k) {
-
-
 		int sum = 0;
 		for(int i:nums) sum+=i;
 		if(sum%k!=0) return false;
 		if(nums.length<k)return false;
-
 		int[] buckets = new int[k];
 		int n = 0;
 
@@ -63,14 +60,21 @@ class Solution {
 
     }
 
-
+	/**
+	 * 以数字的视角，每个数字都要选择放入的桶。
+	 * @param nums 每个数字
+	 * @param buckets 每个桶以装入的大小
+	 * @param n 正在处理第n个数字
+	 * @param bucket_target 桶的目标大小
+	 * @return
+	 */
 	public boolean backtrack(int[] nums,int[] buckets, int n,int bucket_target) {
 		if(n == nums.length){
-//			for(int isum :buckets){
-//				if(isum != bucket_target){
-//					return false;
-//				}
-//			}
+			for(int isum :buckets){
+				if(isum != bucket_target){
+					return false;
+				}
+			}
 			return true;
 		}
 		for(int i = 0; i < buckets.length; i++){
@@ -80,8 +84,6 @@ class Solution {
 			buckets[i] += nums[n];
 			if(backtrack(nums,buckets,n+1,bucket_target)) return true;
 			buckets[i] -= nums[n];
-
-
 		}
 		return  false;
 

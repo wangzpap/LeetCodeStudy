@@ -69,17 +69,11 @@ class Solution {
 		int result = Integer.MAX_VALUE;
 
 		if(memory.containsKey(target)) return memory.get(target);
-
-
 		for(int i=0;i<coins.length;i++){
 			int c = coins[i];
 
-			int subProblemResult;
-			if(memory.containsKey(target-c))subProblemResult = memory.get(target-c);
-			else{
-				subProblemResult = dp(coins,target-c);
-				memory.put(target-c,subProblemResult);
-			}
+			int subProblemResult = dp(coins,target-c);
+			memory.put(target-c,subProblemResult);
 
 			if(subProblemResult ==-1)continue;
 
@@ -87,8 +81,6 @@ class Solution {
 
 		}
 		return result == Integer.MAX_VALUE ? -1 : result;
-
-
 	}
 
 }

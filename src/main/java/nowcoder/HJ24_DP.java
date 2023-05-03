@@ -1,4 +1,4 @@
-package othercode.nowcoder;
+package nowcoder;
 
 
 import com.sun.xml.internal.fastinfoset.tools.XML_SAX_StAX_FI;

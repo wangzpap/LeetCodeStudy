@@ -72,6 +72,11 @@ class Solution {
 		return finalresult;
 	}
 
+	/**
+	 *
+	 * @param result 当前选择的结果list
+	 * @param n 深度，已经做了选择的数量
+	 */
 	public void backtrack(LinkedList<Integer> result,int n){
 		if(n == N){
 			finalresult.add(new LinkedList<>(result)); // 必须新new一个添加到finalresult中，否则只是添加了引用的地址

@@ -1,5 +1,6 @@
 package othercode;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class CollectionsTest {
@@ -61,6 +62,23 @@ public class CollectionsTest {
 //                return a[1] - b[1];
 //            }
 //        });
+
+        int[] nums = new int[]{1,2,34};
+        System.out.println(Arrays.stream(nums).sum());
+
+
+
+        // 小顶堆，堆顶是最小元素
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.offer(1);
+        pq.size();
+        pq.poll();
+        pq.peek();
+
+
+
+
+
 
     }
 }
