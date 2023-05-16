@@ -52,7 +52,7 @@ class Solution {
 	int BinaryS(int left,int right,int target,int[]  nums){
 
 		while(left<=right){ // 注意left<=right
-			int mid = left + (right - left)/2;
+			int mid =  (right+left)>>>1;
 			if(nums[mid]>target){
 				right = mid-1;
 			}else if(nums[mid]<target){

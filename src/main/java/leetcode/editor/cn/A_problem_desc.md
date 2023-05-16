@@ -1,4 +1,5 @@
 ## 回溯&&DFS
+- 简单 112. 路径总和
 - 中等 1020. 飞地的数量(DFS,直接套用DFS二维矩阵的遍历框架)
 - 中等 695. 岛屿的最大面积&剑指OfferII105(DFS,直接套用DFS二维矩阵的遍历框架)
 - 中等 1254. 统计封闭岛屿的数目(DFS,直接套用DFS二维矩阵的遍历框架)
@@ -32,6 +33,7 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
 - 中等 102. 二叉树的层序遍历
 - 简单 111. 二叉树的最小深度
 - 中等 752. [打开转盘锁](https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/#三解开密码锁的最少次数) 
+- 简单 559. 多叉树的最大深度
 
 ## 动态规划DP
 
@@ -42,6 +44,7 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
 - 简单 剑指 Offer 42. 连续子数组的最大和(一维，自底向上)
 - 中等 64. 最小路径和(二维,自顶向下)
 - 中等 62. 不同路径(二维,自顶向下)
+- 中等 63. 不同路径 II(二维,自底向上)
 - 中等 剑指 Offer II 099. 最小路径之和(二维,自顶向下)
 - 中等 931. 下降路径最小和(二维,自底向上)
 - 中等 53.最大子数组(一维，自顶向下)
@@ -50,6 +53,7 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
 - 中等 322. 零钱兑换
 - 中等 牛客HJ16 
 - 中等 牛客HJ24
+- 简单 118. 杨辉三角
 
 ## 贪心算法
 
@@ -79,6 +83,8 @@ https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa
 - 困难 76. 最小覆盖子串(滑动窗口，双指针)
 - 中等 567. 字符串排列(滑动窗口，双指针)
 - 中等 438. 找到字符串中所有字母异位词(滑动窗口，双指针)
+- 简单 6416. 找出不同元素数目差数组(模拟题，注意时间)
+
 
 ## 字符串
 - 简单 58. 最后一个单词的长度

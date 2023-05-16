@@ -2,9 +2,9 @@ package othercode;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main00 {
     public static void main(String[] args) {
-        Solution solution = new Main().new Solution();
+        Solution solution = new Main00().new Solution();
         int R,C;
         Scanner scanner = new Scanner(System.in);
         R = scanner.nextInt(); // 几行
