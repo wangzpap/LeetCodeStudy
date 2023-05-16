@@ -110,7 +110,7 @@ class Solution {
 			lists[i] = new ArrayList<>();
 		}
 		for(int[] p:prerequisites){
-			lists[p[0]].add(p[1]);
+			lists[p[1]].add(p[0]);
 		}
 		return lists;
 	}
