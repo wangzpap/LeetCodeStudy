@@ -62,6 +62,7 @@ package leetcode.editor.cn;
  * 231. 2 的幂
  * @author WZP
  * @date 2023-04-19 15:03:48
+ * https://labuladong.gitee.io/algo/di-san-zha-24031/shu-xue-yu-659f1/chang-yong-13a76/#二n--n-1-的运用
  */
 public class P231_PowerOfTwo{
 	 public static void main(String[] args) {

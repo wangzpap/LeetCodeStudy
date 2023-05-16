@@ -63,7 +63,8 @@ public class P21_MergeTwoSortedLists{
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-		ListNode newNode = new ListNode(-1);ListNode re = newNode;
+		ListNode newNode = new ListNode(-1);
+		ListNode re = newNode;
 		ListNode l1,l2;
 		l1 = list1; l2 = list2;
 		while (l1!= null && l2!= null) {

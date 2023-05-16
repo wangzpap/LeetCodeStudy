@@ -77,20 +77,17 @@ class Solution {
 
 		while(columnNumber>0){
 			int x = columnNumber%26;
-
 			if(x==0){
 				x = 26;
 				columnNumber= columnNumber-1;
 			}
-
-
 //			System.out.println(x);
 			sb.append(toChar(x));
 			columnNumber = columnNumber/26;
 		}
 
 		return sb.reverse().toString();
-    }
+	}
 
 	public char toChar(int a){
 		return (char)(a+64);

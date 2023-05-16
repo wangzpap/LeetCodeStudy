@@ -92,6 +92,12 @@ public class P13_RomanToInteger{
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+	/**
+	 * 这题懂了就非常简单。首先建立一个HashMap来映射符号和值，然后对字符串从左到右来，
+	 * 如果当前字符代表的值不小于其右边，就加上该值；否则就减去该值。以此类推到最左边的数，最终得到的结果即是答案
+	 * @param s
+	 * @return
+	 */
     public int romanToInt(String s) {
 		int preNum =getNum(s.charAt(0));
 		int result = 0;

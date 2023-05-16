@@ -71,13 +71,16 @@ public class P26_RemoveDuplicatesFromSortedArray{
 	 
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeDuplicates(int[] nums) {
+	class Solution {
+    	public int removeDuplicates(int[] nums) {
 			int n = nums.length;
+			// 特殊情况直接返回
 			if (n == 0) {
 				return 0;
 			}
+			// 快慢指针
 			int fast = 1, slow = 1;
+			// “遍历快指针”,只要快指针不等于前一个位置，将其赋给慢指针
 			while (fast < n) {
 				if (nums[fast] != nums[fast - 1]) {
 					nums[slow] = nums[fast];

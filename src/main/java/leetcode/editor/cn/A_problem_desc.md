@@ -1,7 +1,3 @@
-
-
-
-
 ## 回溯&&DFS
 - 中等 1020. 飞地的数量(DFS,直接套用DFS二维矩阵的遍历框架)
 - 中等 695. 岛屿的最大面积&剑指OfferII105(DFS,直接套用DFS二维矩阵的遍历框架)
@@ -68,12 +64,14 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
  
 ## 数组&链表
 https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa4bd/
+- 简单 21. 合并两个有序链表（双指针）
 - 简单 26. 删除有序数组中的重复项（双指针）
 - 简单 27. 在原数组上删除指定元素（双指针）
 - 简单 83. 删除排序链表中的重复元素（双指针）
 - 简单 283. 数组移除零（双指针）
 - 简单 344. 反转字符串（双指针）
 - 简单 125. 验证回文串（SringBuilder、双指针）
+- 中等 5. 最长回文子串(中心扩散法)
 - 中等 剑指Offer 35.复制复杂链表（面试题）
 - 中等 15. [三数之和(面试题)](https://leetcode.cn/problems/3sum/solution/pai-xu-shuang-zhi-zhen-zhu-xing-jie-shi-python3-by/)
 - 简单 2089. 找出数组排序后的目标下标(快排)
@@ -89,8 +87,9 @@ https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa
 - 简单 495. 判断重复的子字符串()
 - 简单 242. 有效的字母异位词
 - 简单 383. 赎金信
+- 简单 20. 有效的括号
 
-## 位运算
+ ## 位运算
 
 - 简单 136. 只出现一次的数字（异或运算）
 - 简单 191. [位 1 的个数](https://labuladong.github.io/algo/di-san-zha-24031/shu-xue-yu-659f1/chang-yong-13a76/#二n--n-1-的运用)

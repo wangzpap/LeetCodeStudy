@@ -70,7 +70,7 @@ class Solution {
 				if(s.charAt(i)==s.charAt(j)){
 
 					if(b[i][j])continue;
-					if(i+1==j){
+					if(i+1==j){ // 只有两个字母
 						b[i][j] = true;
 					}
 					else if(b[i+1][j-1]==true){
