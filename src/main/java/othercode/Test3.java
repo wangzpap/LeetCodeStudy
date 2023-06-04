@@ -8,8 +8,9 @@ public class Test3 {
 
 
 
-        Map<int[], int[]> qianqu = new HashMap<>();
-        qianqu.put(new int[]{1,2},new int[]{3,4});
-        System.out.println(qianqu.get(new int[]{1, 2}));
+        System.out.println(Integer.toBinaryString(6)); // 110
+        System.out.println(Integer.toBinaryString(4)); // 100
+        System.out.println(Integer.toBinaryString(6 | 4)); // 110
+        System.out.println(6 | 4);// 6
     }
 }

@@ -71,11 +71,9 @@ class Solution {
 			}
 			fast = fast.next;
 		}
-		slow.next = null;
+		slow.next = null; // 重要，否则最后会出现一串相同元素的链尾
 		return head;
-
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
-
 }
