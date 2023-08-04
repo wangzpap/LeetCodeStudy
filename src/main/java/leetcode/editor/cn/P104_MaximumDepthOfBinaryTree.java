@@ -48,33 +48,34 @@ public class P104_MaximumDepthOfBinaryTree{
  * }
  */
 class Solution {
-//    public int maxDepth(TreeNode root) {
-//		if(root == null) return 0;
-//
-//		return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
-//    }
+    public int maxDepth(TreeNode root) {
+		if(root == null) return 0;
 
-	int maxDepth = 0;
-	int depth = 1;
-	public int maxDepth(TreeNode root) {
-		traverse(root);
-		System.out.println(depth);
-		return maxDepth;
-	}
-
-	public void traverse(TreeNode root){
-		depth++;
-		if(root == null) {
-			maxDepth = Math.max(maxDepth,depth);
-			System.out.println(depth);
-			return;
-		}
-
-		traverse(root.left);
-		traverse(root.right);
-		depth--;
-
-	}
+		return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
+    }
+	//int maxDepth = 0;
+	//int depth = 1;
+	//
+	//public int maxDepth(TreeNode root) {
+	//	if(root == null) return 0;
+	//
+	//	return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
+	//}
+	//
+	//
+	//public void traverse(TreeNode root){
+	//	depth++;
+	//	if(root == null) {
+	//		maxDepth = Math.max(maxDepth,depth);
+	//		System.out.println(depth);
+	//		return;
+	//	}
+	//
+	//	traverse(root.left);
+	//	traverse(root.right);
+	//	depth--;
+	//
+	//}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

@@ -1,0 +1,28 @@
+### 解题思路
+
+首先先扫描一遍链表，确定所含结点个数，若为偶数个则（num/2）+1，若为奇数则（num+1）/2，再从头找到该位置结点即可
+
+### 代码
+
+* c
+
+```c
+struct ListNode* middleNode(struct ListNode* head){
+struct ListNode* i = head;
+int num = 0, mid;
+while(i != NULL)
+{
+    num++;
+    i = i->next;
+}
+if((num % 2) == 0)
+    mid = (num/2)+1;
+else
+    mid = (num+1)/2;
+i = head;
+for(int j = 1; j < mid; j++)
+    i = i->next;
+return i;
+}
+```
+

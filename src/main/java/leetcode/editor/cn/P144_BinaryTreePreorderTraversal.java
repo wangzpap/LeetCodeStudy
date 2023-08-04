@@ -87,24 +87,18 @@ public class P144_BinaryTreePreorderTraversal{
  * }
  */
 class Solution {
-
-
-	List<Integer> list = new ArrayList<>();
-
+	List<Integer> list = new ArrayList<>(); // 存储遍历结果
 	public List<Integer> preorderTraversal(TreeNode root) {
 		traverse(root);
 		return list;
 	}
-
 
 	void traverse(TreeNode root){
 
 		if(root == null){
 			return;
 		}
-
-		list.add(root.val);
-
+		list.add(root.val); // 二叉树的前序遍历位置
 		traverse(root.left);
 		traverse(root.right);
 	}

@@ -37,10 +37,7 @@
 
 package leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * 二叉树的层序遍历
@@ -72,15 +69,16 @@ public class P102_BinaryTreeLevelOrderTraversal{
  */
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-		List<List<Integer>> final_list = new ArrayList<List<Integer>>();
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+
+		List<List<Integer>> final_list = new ArrayList<>(); // 存放每一层的list
 		if(root == null){
 			return final_list;
 		}
+
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.offer(root);
 
 		while (!queue.isEmpty()) {
-
 			int queuesize = queue.size();
 			List<Integer> list = new ArrayList<Integer>();
 			for(int i =0; i < queuesize;i++){
@@ -95,12 +93,9 @@ class Solution {
 					queue.offer(node.right);
 				}
 			}
-			final_list.add(list);
+			final_list.add(new ArrayList<Integer>(list));// 将每一层的结果放入最终结果中
 		}
-
 		return  final_list;
-
-
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

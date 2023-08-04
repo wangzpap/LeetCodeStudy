@@ -91,23 +91,23 @@ class Solution {
 		for(Node n:root.children){
 			DFS(n);
 		}
-		list.add(root.val);
+		list.add(root.val);  // 后序位置
 	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
-class Node {
-	public int val;
-	public List<Node> children;
+	class Node {
+		public int val;
+		public List<Node> children;
 
-	public Node() {}
+		public Node() {}
 
-	public Node(int _val) {
-		val = _val;
-	}
+		public Node(int _val) {
+			val = _val;
+		}
 
-	public Node(int _val, List<Node> _children) {
-		val = _val;
-		children = _children;
-	}
-};
+		public Node(int _val, List<Node> _children) {
+			val = _val;
+			children = _children;
+		}
+	};
 }

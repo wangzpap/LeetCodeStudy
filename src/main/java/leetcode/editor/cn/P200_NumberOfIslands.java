@@ -60,34 +60,74 @@ public class P200_NumberOfIslands{
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+	//public int numIslands(char[][] grid) {
+	//	int m = grid.length;
+	//	int n = grid[0].length;
+	//
+	//	UF uf = new UF(m*n);
+	//
+	//	int n0 = 0;
+	//	for(int i = 0; i < m;i++){
+	//		for(int j = 0; j < n;j++){
+	//			if(grid[i][j]=='0')n0++;
+	//			int[][] f = new int[][]{{0,-1},{0,1},{-1,0},{1,0}};
+	//			for(int k = 0; k < 4;k++){
+	//				int newi = i + f[k][0];
+	//				int newj = j + f[k][1];
+	//				if(newi>=0&&newi<m&&newj>=0&&newj<n){
+	//					if(grid[newi][newj]=='1' && grid[i][j]=='1')
+	//						uf.union(i*n+j,newi*n+newj);
+	//				}
+	//			}
+	//
+	//		}
+	//	}
+	//
+	//
+	//
+	//	return uf.count()-n0;
+	//}
+
 	public int numIslands(char[][] grid) {
 		int m = grid.length;
 		int n = grid[0].length;
 
-		UF uf = new UF(m*n);
-
-		int n0 = 0;
-		for(int i = 0; i < m;i++){
-			for(int j = 0; j < n;j++){
-				if(grid[i][j]=='0')n0++;
-				int[][] f = new int[][]{{0,-1},{0,1},{-1,0},{1,0}};
-				for(int k = 0; k < 4;k++){
-					int newi = i + f[k][0];
-					int newj = j + f[k][1];
-					if(newi>=0&&newi<m&&newj>=0&&newj<n){
-						if(grid[newi][newj]=='1' && grid[i][j]=='1')
-							uf.union(i*n+j,newi*n+newj);
-					}
+		int[][] visited = new int[m][n];
+		int color = 0;
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				if(visited[i][j]==0 && grid[i][j]=='1'){
+					color++;
+					DFS(grid,i,j,visited,color);
 				}
-
 			}
 		}
+		return color;
+	}
+
+	public void DFS(char[][] grid,int i,int j,int[][] visited,int color){
+		if(i<0||i>=grid.length || j<0 || j>=grid[0].length){
+			return;
+		}
+		if(grid[i][j]=='0')return;
+		if(visited[i][j]!=0)return;
+		visited[i][j] = color;
 
 
+		int[][] fang = new int[][]{{-1,0},{1,0},{0,-1},{0,1}};
+		for (int[] f : fang) {
+			int x = f[0];
+			int y = f[1];
 
-		return uf.count()-n0;
+			DFS(grid,i+x,j+y,visited,color);
+		}
 	}
 }
+
+
+
+
+
 
 class UF {
 	// 连通分量个数

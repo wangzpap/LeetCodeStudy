@@ -88,9 +88,8 @@ class Solution {
 	public void DFS(Node root){
 		if(root==null)return;
 
-		list.add(root.val);
-
-		for(Node n:root.children){
+		list.add(root.val);        // 前序位置
+		for(Node n:root.children){ // 二叉树是左右两个子树、N叉树是n个子树
 			DFS(n);
 		}
 	}

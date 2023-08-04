@@ -57,14 +57,37 @@ class Solution {
 	 * @param n
 	 * @return
 	 */
+	//public int integerBreak(int n) {
+	//	int[] dp = new int[n + 1];
+	//	for (int i = 1; i <= n; i++) {
+	//		if (i != n) dp[i] = i;
+	//		for (int j = 1; j <= i / 2; j++) {
+	//			dp[i] = Math.max(dp[i], dp[j] * dp[i - j]);
+	//		}
+	//	}
+	//	return dp[n];
+	//}
+
+	/**
+	 * 方法2：代码随想录 https://www.bilibili.com/video/BV1Mg411q7YJ
+	 * @param n
+	 * @return
+	 *
+	 */
 	public int integerBreak(int n) {
-		int[] dp = new int[n + 1];
-		for (int i = 1; i <= n; i++) {
-			if (i != n) dp[i] = i;
-			for (int j = 1; j <= i / 2; j++) {
-				dp[i] = Math.max(dp[i], dp[j] * dp[i - j]);
+		int[] dp = new int[n + 1]; // 表示将x拆分后的乘积最大值(必须拆分)
+
+		// 初始化边界
+		dp[0] = 0;
+		dp[1] = 0; // 1 不可拆
+
+		// 递推公式 dp[n] = max{ i*(n-i) ,i*dp[n-i] , dp[n] }
+		for(int i = 0; i <= n; i++){
+			for(int j = 0 ; j <= i; j++){
+				dp[i] = Math.max(j*(i-j),Math.max(j*dp[i-j],dp[i]));
 			}
 		}
+
 		return dp[n];
 	}
 }

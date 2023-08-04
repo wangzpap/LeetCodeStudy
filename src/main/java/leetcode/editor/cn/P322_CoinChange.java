@@ -58,31 +58,39 @@ public class P322_CoinChange{
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+	 // 备忘录
 	 Map<Integer,Integer> memory = new HashMap<>();
+	/**
+	 *
+	 * @param coins 所有硬币的面额
+	 * @param amount 目标金额
+	 * @return
+	 */
     public int coinChange(int[] coins, int amount) {
 
 		return dp(coins,amount);
     }
 	int dp(int[] coins,int target){
+		// base case
 		if(target==0)return 0;
 		if(target<0)return -1;
+
 		int result = Integer.MAX_VALUE;
-
+		// 查找备忘录
 		if(memory.containsKey(target)) return memory.get(target);
-		for(int i=0;i<coins.length;i++){
-			int c = coins[i];
 
+		for(int i=0;i<coins.length;i++){ // 遍历所有面额
+			int c = coins[i];
+			// 递归求解子问题
 			int subProblemResult = dp(coins,target-c);
 			memory.put(target-c,subProblemResult);
-
+			// 子问题无解
 			if(subProblemResult ==-1)continue;
-
+			// 在子问题中选择最优解，然后+1
 			result =  Math.min(result,subProblemResult +1);
-
 		}
 		return result == Integer.MAX_VALUE ? -1 : result;
 	}
-
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

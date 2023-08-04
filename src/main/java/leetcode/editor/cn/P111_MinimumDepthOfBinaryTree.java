@@ -29,7 +29,7 @@
 // -1000 <= Node.val <= 1000 
 // 
 //
-// Related Topics 树 深度优先搜索 广度优先搜索 二叉树 👍 987 👎 0
+// Related Topics 树 深度优先搜索 广度优先搜索 二叉树 👍 1027 👎 0
 
 
 package leetcode.editor.cn;
@@ -40,7 +40,7 @@ import java.util.Queue;
 /**
  * 二叉树的最小深度
  * @author WZP
- * @date 2023-04-14 15:57:01
+ * @date 2023-07-06 10:38:08
  */
 public class P111_MinimumDepthOfBinaryTree{
 	 public static void main(String[] args) {
@@ -66,33 +66,37 @@ public class P111_MinimumDepthOfBinaryTree{
  * }
  */
 class Solution {
-	public int minDepth(TreeNode root) {
-		int final_result = 0;
-		if(root==null){
-			return 0;
-		}
+	/**
+	 * 函数 minDepth 接受一个二叉树的根节点 root 作为参数，并返回树的最小深度。
+	 * @param root
+	 * @return
+	 */
+    public int minDepth(TreeNode root) {
+		// 边界条件：根节点为空直接返回
+		if(root==null)return 0;
 
-		Queue<TreeNode> que = new LinkedList<>();
-		que.offer(root);
-		int deep = 1;
-		while(que.size()!=0){
+		int deep = 0;
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.add(root);
+		deep++;
 
-			int s = que.size();
-			for(int i = 0; i < s;i++){
-				TreeNode node = que.poll();
-
-				if(node.left==null && node.right==null){ // 找到第一个叶子节点
+		while (!queue.isEmpty()){
+			int qsize = queue.size();
+			for (int i = 0; i < qsize; i++) {// 遍历下一层的每个节点
+				TreeNode cur = queue.poll();
+				// 找到第一个叶子节点，其深度即为答案
+				if(cur.left==null&&cur.right==null){// 判断是否为叶子节点
 					return deep;
 				}
 
-				if(node.left!=null){
-					que.offer(node.left);
+				if(cur.left!=null){
+					queue.add(cur.left);
 				}
-				if(node.right!=null){
-					que.offer(node.right);
+				if(cur.right!=null){
+					queue.add(cur.right);
 				}
 			}
-			deep++;
+			deep++; // 每一层的深度 + 1
 		}
 		return deep;
 	}

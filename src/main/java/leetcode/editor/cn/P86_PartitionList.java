@@ -28,16 +28,15 @@
 // -200 <= x <= 200 
 // 
 //
-// Related Topics 链表 双指针 👍 695 👎 0
+// Related Topics 链表 双指针 👍 733 👎 0
 
 
 package leetcode.editor.cn;
 
 /**
- * 分隔链表
+ * 86. 分隔链表
  * @author WZP
- * @date 2023-04-07 17:14:30
- * https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-8f30d/shuang-zhi-0f7cc/
+ * @date 2023-07-26 21:28:54
  */
 public class P86_PartitionList{
 	 public static void main(String[] args) {
@@ -59,33 +58,28 @@ public class P86_PartitionList{
  */
 class Solution {
     public ListNode partition(ListNode head, int x) {
-		// 存放小于 x 的链表的虚拟头结点
-		ListNode dummy1 = new ListNode(-1);
-		// 存放大于等于 x 的链表的虚拟头结点
-		ListNode dummy2 = new ListNode(-1);
-		// p1, p2 指针负责生成结果链表
-		ListNode p1 = dummy1, p2 = dummy2;
-		// p 负责遍历原链表，类似合并两个有序链表的逻辑
-		// 这里是将一个链表分解成两个链表
-		ListNode p = head;
-		while (p != null) {
-			if (p.val >= x) {
-				p2.next = new ListNode(p.val);
-				p2 = p2.next;
-			} else {
-				p1.next = new ListNode(p.val);;
-				p1 = p1.next;
-			}
-			// 断开原链表中的每个节点的 next 指针
-//			ListNode temp = p.next;
-//			p.next = null;
-//			p = temp;
-			p = p.next;
-		}
-		// 连接两个链表
-		p1.next = dummy2.next;
+		// 创建两个新链表 一个存小于x的节点 一个存大于等于x的节点
+		ListNode l1 = new ListNode();
+		ListNode l2 = new ListNode();
+		ListNode l1head = l1,l2head = l2;
+		ListNode cur = head;
 
-		return dummy1.next;
+		while (cur!=null){
+			if(cur.val<x){
+				l1.next = cur;
+				l1 = l1.next;
+			}else {
+				l2.next = cur;
+				l2 = l2.next;
+			}
+
+			ListNode c = cur.next;
+			cur.next = null;
+			cur = c;
+		}
+
+		l1.next = l2head.next;
+		return l1head.next;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

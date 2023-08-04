@@ -51,7 +51,6 @@ public class P516_LongestPalindromicSubsequence{
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-
     int[][] memory;
 
     public int longestPalindromeSubseq(String s) {
@@ -61,7 +60,6 @@ class Solution {
 			Arrays.fill(memory[i],-1);
 			memory[i][i] = 1;
 		}
-
 
 		return DP(s,0,s.length()-1);
     }
@@ -92,10 +90,7 @@ class Solution {
 			memory[i][j] = r;
 			return r;
 		}
-
 	}
-
 }
 //leetcode submit region end(Prohibit modification and deletion)
-
 }

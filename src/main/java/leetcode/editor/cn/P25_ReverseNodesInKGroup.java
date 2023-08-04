@@ -70,40 +70,25 @@ public class P25_ReverseNodesInKGroup{
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
 		if(head == null) return head;
+		ListNode a = head, b = head;
 
-		ListNode a,b;
-		a = head;b = head;
-		for(int i = 0; i < k;i++){
-			if(b == null)return head;
+		for (int i = 0; i < k; i++) {
+			if(b == null) return head;
 			b = b.next;
 		}
-		ListNode N = reverse(a,b);
-		a.next = reverseKGroup(b,k);
-		return N;
-    }
-
-	public ListNode reverse(ListNode head){
-		ListNode pre,cur,nxt;
-		pre = null;
-		cur = head;
-		nxt = head;
-
-		while(cur!= null){
-			nxt = cur.next;
-			cur.next = pre;
-			pre = cur;
-			cur = nxt;
-		}
-		return pre;
+		ListNode newhead = reverse(a,b);
+		ListNode node = reverseKGroup(b, k);
+		a.next = node;
+		return newhead;
 	}
 
+
+	/** 反转区间 [a, b) 的元素，注意是左闭右开 */
 	public ListNode reverse(ListNode a, ListNode b){
-		ListNode pre,cur,nxt;
-		pre = null;
-		cur = a;
-		nxt = a;
-
-		while(cur!= b){
+		ListNode pre = null;
+		ListNode cur = a;
+		ListNode nxt = a;
+		while (cur != b){
 			nxt = cur.next;
 			cur.next = pre;
 			pre = cur;
@@ -111,8 +96,6 @@ class Solution {
 		}
 		return pre;
 	}
-
-
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

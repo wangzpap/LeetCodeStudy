@@ -45,10 +45,6 @@
 
 package leetcode.editor.cn;
 
-import com.sun.xml.internal.fastinfoset.util.CharArray;
-
-import javax.xml.stream.events.Characters;
-
 /**
  * 125. 验证回文串
  * @author WZP

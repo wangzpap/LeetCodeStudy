@@ -60,10 +60,9 @@ public class P509_FibonacciNumber{
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-
-
     int[] memory = new int[31];// 备忘录
     public int fib(int n) {
+		// base case
 		if(n==1) return 1;
 		if(n==0) return 0;
 

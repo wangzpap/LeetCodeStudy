@@ -75,12 +75,12 @@ class Offer024_UHnkqh{
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-		if(head==null||head.next==null)return head;
-		ListNode x = reverseList(head.next);
+		if(head==null || head.next==null)return head;
+		ListNode x = reverseList(head.next); // 返回起始节点
 		head.next.next = head;
 		head.next = null;
 		return x;
-    }
+	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

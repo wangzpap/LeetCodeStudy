@@ -48,10 +48,7 @@
 
 package leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * 合并 K 个升序链表
@@ -78,28 +75,35 @@ public class P23_MergeKSortedLists{
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-		List<Integer> list = new ArrayList<Integer>();
-		for(int i =0;i < lists.length;i++){
-			ListNode node  = lists[i];
-			while (node!=null){
-				list.add(node.val);
-				if(node.next!=null){
-					node = node.next;
-				}
-				else {
-					break;
-				}
+
+		if(lists.length==0)return null;
+
+		// 创建一个优先队列、最小堆
+		PriorityQueue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
+			@Override
+			public int compare(ListNode o1, ListNode o2) {
+				return o1.val - o2.val;
 			}
+		});
+		// 将 k 个链表的头结点加入最小堆
+		for (ListNode node : lists) {
+			if(node!=null)
+			queue.add(node);
 		}
-		Collections.sort(list);
-		ListNode newNode = new ListNode(-1);
-		ListNode n = newNode;
-		for(Integer i:list){
-			newNode.next = new ListNode(i);
-			newNode = newNode.next;
+		ListNode newNode = new ListNode();
+		ListNode curNode = newNode;
+		while (queue.size()>0){
+			// 获取最小节点，接到结果链表中
+			ListNode node = queue.poll();
+			curNode.next = node;
+			if(node.next!=null){
+				queue.add(node.next);
+			}
+			// curNode 指针不断前进
+			curNode = curNode.next;
 		}
-		return n.next;
-    }
+		return newNode.next;
+	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
