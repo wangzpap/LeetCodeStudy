@@ -37,6 +37,7 @@ package leetcode.editor.cn;
  * 5. 最长回文子串
  * @author WZP
  * @date 2023-04-18 14:21:18
+ * 中心扩散法
  */
 public class P5_LongestPalindromicSubstring{
 	 public static void main(String[] args) {

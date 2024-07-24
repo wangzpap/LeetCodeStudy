@@ -27,7 +27,7 @@
 // 题目数据保证链表已经按升序 排列 
 // 
 //
-// Related Topics 链表 👍 991 👎 0
+// Related Topics 链表 👍 977 👎 0
 
 
 package leetcode.editor.cn;
@@ -35,7 +35,7 @@ package leetcode.editor.cn;
 /**
  * 删除排序链表中的重复元素
  * @author WZP
- * @date 2023-05-25 15:52:06
+ * @date 2023-04-18 09:27:14
  */
 public class P83_RemoveDuplicatesFromSortedList{
 	 public static void main(String[] args) {
@@ -54,27 +54,26 @@ public class P83_RemoveDuplicatesFromSortedList{
  *     ListNode(int val) { this.val = val; }
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * 双指针，当快指针与慢指针数据不同时，则将慢指针下一个指向快指针，并更新慢指针
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-		if(head==null)return head;
-
 		ListNode slow = head;
 		ListNode fast = head;
 
-		while (fast!=null){
-			if(fast.val != slow.val){
+		if(head==null)return null; // 注意边界条件
+
+		while(fast!=null){
+			if (fast.val != slow.val) {
+
 				slow.next = fast;
 				slow = slow.next;
 			}
 			fast = fast.next;
 		}
-		slow.next = null;
+		slow.next = null; // 重要，否则最后会出现一串相同元素的链尾
 		return head;
-
-
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
-
 }

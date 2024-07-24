@@ -77,7 +77,7 @@ public class P27_RemoveElement{
 class Solution {
 	 int left = 0; // 左节点
 	 int right = 0; // 右节点
-
+	// 同26题类似
     public int removeElement(int[] nums, int val) {
 		while(right<nums.length){
 			if(nums[right]!=val){

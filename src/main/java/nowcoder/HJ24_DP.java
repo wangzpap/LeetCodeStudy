@@ -51,9 +51,5 @@ public class HJ24_DP {
 
         }
         System.out.println(result);
-
-
-
-        
     }
 }

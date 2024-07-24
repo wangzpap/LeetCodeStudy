@@ -80,7 +80,6 @@ class Solution {
 		}
 	}
 
-
 	// 用双指针技巧判断 s[lo..hi] 是否是一个回文串
 	boolean isPalindrome(String s, int lo, int hi) {
 		while (lo < hi) {

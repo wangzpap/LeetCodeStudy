@@ -33,15 +33,15 @@
 // l1 和 l2 均按 非递减顺序 排列 
 // 
 //
-// Related Topics 递归 链表 👍 3185 👎 0
+// Related Topics 递归 链表 👍 2961 👎 0
 
 
 package leetcode.editor.cn;
 
 /**
- * 21. 合并两个有序链表
+ * 合并两个有序链表
  * @author WZP
- * @date 2023-07-26 18:09:55
+ * @date 2023-03-05 21:04:13
  */
 public class P21_MergeTwoSortedLists{
 	 public static void main(String[] args) {
@@ -63,32 +63,29 @@ public class P21_MergeTwoSortedLists{
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-		ListNode newnode = new ListNode();
-		ListNode newnode1 = newnode;
-
-		ListNode l1 = list1;
-		ListNode l2 = list2;
-
-		while (l1!=null && l2!=null){
-			if(l1.val > l2.val){
-				newnode.next =  l2;
+		ListNode newNode = new ListNode(-1);ListNode re = newNode;
+		ListNode l1,l2;
+		l1 = list1; l2 = list2;
+		while (l1!= null && l2!= null) {
+			if(l1.val<=l2.val){
+			   newNode.next = l1;
+			   l1 = l1.next;
+			}else{
+				newNode.next = l2;
 				l2 = l2.next;
-			}else {
-				newnode.next =  l1;
-				l1 = l1.next;
-			}
-			newnode = newnode.next;
+		    }
+			newNode = newNode.next;
+    	}
+		if(l1!=null) {
+			newNode.next = l1;
 		}
-
-		if(l1!=null){
-			newnode.next = l1;
+		if(l2!=null) {
+			newNode.next = l2;
 		}
-		if(l2!=null){
-			newnode.next = l2;
-		}
-		return newnode1.next;
-    }
+		return re.next;
+	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
+

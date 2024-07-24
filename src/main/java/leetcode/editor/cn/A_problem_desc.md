@@ -1,7 +1,3 @@
-
-
-
-
 ## 回溯&&DFS
 - 简单 112. 路径总和
 - 中等 1020. 飞地的数量(DFS,直接套用DFS二维矩阵的遍历框架)
@@ -9,6 +5,7 @@
 - 中等 1254. 统计封闭岛屿的数目(DFS,直接套用DFS二维矩阵的遍历框架)
 - 中等 46 全排列-返回所有可能的
 - 中等 47 全排列-返回所有可能的(包含重复数字)
+- 中等 22. 括号生成
 - 中等 698. 划分为k个相等的子集
 - 中等 131 分割回文串
 - 中等 494. 目标和(注意超时)
@@ -38,12 +35,14 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
 - 简单 111. 二叉树的最小深度
 - 中等 752. [打开转盘锁](https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/#三解开密码锁的最少次数) 
 - 简单 559. 多叉树的最大深度
+- 困难 773. 滑动谜题
 
 ## 动态规划DP
 
 - 简单 509. 斐波那契数列（递归+备忘录)
 - 中等 1143. 最长公共子序列(二维,自底向上)
 - 简单 70. 爬楼梯
+- 简单 746. 使用最小花费爬楼梯(一维，自顶向下)
 - 中等 300. 最长递增子序列(一维,自底向上)
 - 简单 剑指 Offer 42. 连续子数组的最大和(一维，自底向上)
 - 中等 64. 最小路径和(二维,自顶向下)
@@ -74,6 +73,7 @@ https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/bfs-suan-f-463fd/
  
 ## 数组&链表
 https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa4bd/
+- 简单 21. 合并两个有序链表（双指针）
 - 简单 26. 删除有序数组中的重复项（双指针）
 - 简单 27. 在原数组上删除指定元素（双指针）
 - 简单 83. 删除排序链表中的重复元素（双指针）
@@ -81,6 +81,7 @@ https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa
 - 简单 283. 数组移除零（双指针）
 - 简单 344. 反转字符串（双指针）
 - 简单 125. 验证回文串（SringBuilder、双指针）
+- 中等 5. 最长回文子串(中心扩散法)
 - 中等 剑指Offer 35.复制复杂链表（面试题）
 - 中等 15. [三数之和(面试题)](https://leetcode.cn/problems/3sum/solution/pai-xu-shuang-zhi-zhen-zhu-xing-jie-shi-python3-by/)
 - 简单 2089. 找出数组排序后的目标下标(快排)
@@ -98,8 +99,9 @@ https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/shuang-zhi-fa
 - 简单 495. 判断重复的子字符串()
 - 简单 242. 有效的字母异位词
 - 简单 383. 赎金信
+- 简单 20. 有效的括号
 
-## 位运算
+ ## 位运算
 
 - 简单 136. 只出现一次的数字（异或运算）
 - 简单 191. [位 1 的个数](https://labuladong.github.io/algo/di-san-zha-24031/shu-xue-yu-659f1/chang-yong-13a76/#二n--n-1-的运用)

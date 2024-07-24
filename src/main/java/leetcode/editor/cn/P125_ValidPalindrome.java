@@ -71,6 +71,7 @@ class Solution {
 		s = buffer.toString();
 
 		// 从外到内判断字符是否相同
+		// 两边指针向内缩
 		int left = 0;
 		int right = s.length()-1;
 		while (left < right) {
