@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class MyQuickSort {
     public static void main(String[] args) {
 
-        int[] arr = new int[]{1,2,5,2,54,34,12,9,1};
+        int[] arr = new int[]{7,5,8,3,2,10};
         int start = 0,end = arr.length-1;
         quickSort(arr,start,end);
         System.out.println(Arrays.toString(arr));
@@ -23,8 +23,10 @@ public class MyQuickSort {
     private static void quickSort(int[] arr,int start,int end) {
         if(start<end){
             int mid = getMid(arr,start,end);
+            System.out.println(Arrays.toString(arr));
             quickSort(arr,start,mid-1);
             quickSort(arr,mid+1,end);
+
         }
     }
 
